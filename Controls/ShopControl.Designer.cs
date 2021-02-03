@@ -44,6 +44,8 @@ namespace ProductStock
             this.lblNameSearchShop = new System.Windows.Forms.Label();
             this.txbNameSearchShop = new System.Windows.Forms.TextBox();
             this.CrudProductsShop = new System.Windows.Forms.TabPage();
+            this.btnDeleteCrudShop = new System.Windows.Forms.Button();
+            this.btnUpdateCrudShop = new System.Windows.Forms.Button();
             this.btnAddCrudShop = new System.Windows.Forms.Button();
             this.lblPriceCrudShop = new System.Windows.Forms.Label();
             this.txbPriceCrudShop = new System.Windows.Forms.TextBox();
@@ -52,14 +54,12 @@ namespace ProductStock
             this.label3 = new System.Windows.Forms.Label();
             this.cmbCategoryCrudShop = new System.Windows.Forms.ComboBox();
             this.lblNameCrudShop = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txbNameCrudShop = new System.Windows.Forms.TextBox();
             this.btnShowAllShop = new System.Windows.Forms.Button();
             this.cmbCategorySrchShop = new System.Windows.Forms.ComboBox();
             this.lblCategorySrchShop = new System.Windows.Forms.Label();
             this.lblProductNameSrchShop = new System.Windows.Forms.Label();
             this.txbProductNameSrchShop = new System.Windows.Forms.TextBox();
-            this.btnUpdateCrudShop = new System.Windows.Forms.Button();
-            this.btnDeleteCrudShop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShop)).BeginInit();
             this.tcShop.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -209,7 +209,7 @@ namespace ProductStock
             this.CrudProductsShop.Controls.Add(this.label3);
             this.CrudProductsShop.Controls.Add(this.cmbCategoryCrudShop);
             this.CrudProductsShop.Controls.Add(this.lblNameCrudShop);
-            this.CrudProductsShop.Controls.Add(this.textBox5);
+            this.CrudProductsShop.Controls.Add(this.txbNameCrudShop);
             this.CrudProductsShop.Location = new System.Drawing.Point(4, 22);
             this.CrudProductsShop.Name = "CrudProductsShop";
             this.CrudProductsShop.Padding = new System.Windows.Forms.Padding(3);
@@ -217,6 +217,26 @@ namespace ProductStock
             this.CrudProductsShop.TabIndex = 1;
             this.CrudProductsShop.Text = "CRUD Products";
             this.CrudProductsShop.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteCrudShop
+            // 
+            this.btnDeleteCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDeleteCrudShop.Location = new System.Drawing.Point(31, 276);
+            this.btnDeleteCrudShop.Name = "btnDeleteCrudShop";
+            this.btnDeleteCrudShop.Size = new System.Drawing.Size(194, 35);
+            this.btnDeleteCrudShop.TabIndex = 24;
+            this.btnDeleteCrudShop.Text = "Delete";
+            this.btnDeleteCrudShop.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdateCrudShop
+            // 
+            this.btnUpdateCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUpdateCrudShop.Location = new System.Drawing.Point(127, 235);
+            this.btnUpdateCrudShop.Name = "btnUpdateCrudShop";
+            this.btnUpdateCrudShop.Size = new System.Drawing.Size(98, 35);
+            this.btnUpdateCrudShop.TabIndex = 22;
+            this.btnUpdateCrudShop.Text = "Update";
+            this.btnUpdateCrudShop.UseVisualStyleBackColor = false;
             // 
             // btnAddCrudShop
             // 
@@ -227,6 +247,7 @@ namespace ProductStock
             this.btnAddCrudShop.TabIndex = 21;
             this.btnAddCrudShop.Text = "Add";
             this.btnAddCrudShop.UseVisualStyleBackColor = false;
+            this.btnAddCrudShop.Click += new System.EventHandler(this.btnAddCrudShop_Click);
             // 
             // lblPriceCrudShop
             // 
@@ -286,12 +307,12 @@ namespace ProductStock
             this.lblNameCrudShop.TabIndex = 12;
             this.lblNameCrudShop.Text = "Name";
             // 
-            // textBox5
+            // txbNameCrudShop
             // 
-            this.textBox5.Location = new System.Drawing.Point(28, 40);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 20);
-            this.textBox5.TabIndex = 11;
+            this.txbNameCrudShop.Location = new System.Drawing.Point(28, 40);
+            this.txbNameCrudShop.Name = "txbNameCrudShop";
+            this.txbNameCrudShop.Size = new System.Drawing.Size(200, 20);
+            this.txbNameCrudShop.TabIndex = 11;
             // 
             // btnShowAllShop
             // 
@@ -302,6 +323,7 @@ namespace ProductStock
             this.btnShowAllShop.TabIndex = 2;
             this.btnShowAllShop.Text = "Show All";
             this.btnShowAllShop.UseVisualStyleBackColor = false;
+            this.btnShowAllShop.Click += new System.EventHandler(this.btnShowAllShop_Click);
             // 
             // cmbCategorySrchShop
             // 
@@ -335,26 +357,6 @@ namespace ProductStock
             this.txbProductNameSrchShop.Name = "txbProductNameSrchShop";
             this.txbProductNameSrchShop.Size = new System.Drawing.Size(166, 20);
             this.txbProductNameSrchShop.TabIndex = 6;
-            // 
-            // btnUpdateCrudShop
-            // 
-            this.btnUpdateCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnUpdateCrudShop.Location = new System.Drawing.Point(127, 235);
-            this.btnUpdateCrudShop.Name = "btnUpdateCrudShop";
-            this.btnUpdateCrudShop.Size = new System.Drawing.Size(98, 35);
-            this.btnUpdateCrudShop.TabIndex = 22;
-            this.btnUpdateCrudShop.Text = "Update";
-            this.btnUpdateCrudShop.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteCrudShop
-            // 
-            this.btnDeleteCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnDeleteCrudShop.Location = new System.Drawing.Point(31, 276);
-            this.btnDeleteCrudShop.Name = "btnDeleteCrudShop";
-            this.btnDeleteCrudShop.Size = new System.Drawing.Size(194, 35);
-            this.btnDeleteCrudShop.TabIndex = 24;
-            this.btnDeleteCrudShop.Text = "Delete";
-            this.btnDeleteCrudShop.UseVisualStyleBackColor = false;
             // 
             // FormShop
             // 
@@ -411,7 +413,7 @@ namespace ProductStock
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbCategoryCrudShop;
         private System.Windows.Forms.Label lblNameCrudShop;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbNameCrudShop;
         private System.Windows.Forms.Button btnUpdateCrudShop;
         private System.Windows.Forms.Button btnDeleteCrudShop;
     }

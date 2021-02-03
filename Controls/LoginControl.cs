@@ -36,8 +36,9 @@ namespace ProductStock.Controls
                     if (user.Email == this.txbLoginEmail.Text && user.Password == this.txbLoginPassword.Text)
                     {
                         MessageBox.Show("Successfully Logined!");
-                        FormShop formShop = new FormShop(this);
-                        formShop.ShowDialog();
+                        EntryControl.CurrentUser = user;
+                        EntryControl entryControl = new EntryControl(this);
+                        entryControl.ShowDialog();
                         IsExist = true;
                         break;
                     }
@@ -65,5 +66,6 @@ namespace ProductStock.Controls
             return true;
         }
 
+        
     }
 }

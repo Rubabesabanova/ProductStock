@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddingInitialTables : DbMigration
+    public partial class InitialTables : DbMigration
     {
         public override void Up()
         {

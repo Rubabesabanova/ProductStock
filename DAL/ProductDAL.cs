@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using ProductStock.DbContexts;
 using ProductStock.Models;
 
 namespace ProductStock.DAL
 {
-    class UserDAL : IOperation<User>
+    class ProductDAL : IOperation<Product>
     {
-        public void Add(User user)
+        public void Add(Product item)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-                context.Users.Add(user);
+                context.Products.Add(item);
                 context.SaveChanges();
             }
         }
@@ -24,25 +25,32 @@ namespace ProductStock.DAL
             throw new NotImplementedException();
         }
 
-        public List<User> Show()
+        public List<Product> Show()
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-                return context.Users.ToList();
+                return context.Products.ToList();
             }
         }
-        public User GetByFilter(Func<User, bool>expression = null)
+        public void GetGridData(DataGridView dgv)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-                return context.Users.FirstOrDefault(expression);
+                var products = context.Products.Select(product => new
+                {
+                    Name = product.Name,
+                    Price = product.Price,
+                    User = product.User.Name,
+                    Contact = product.User.Phone,
+                    Category = product.Category.Name
+                }).ToList();
+                dgv.DataSource = products;
+
             }
         }
         public void Update()
         {
             throw new NotImplementedException();
         }
-
-        
     }
 }

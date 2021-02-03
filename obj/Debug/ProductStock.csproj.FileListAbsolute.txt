@@ -12,7 +12,12 @@ C:\Users\hp\source\repos\ProductStock\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\hp\source\repos\ProductStock\bin\Debug\EntityFramework.xml
 C:\Users\hp\source\repos\ProductStock\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.csproj.CopyComplete
-C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Migrations.AddingInitialTables.resources
 C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Controls.LoginControl.resources
 C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Controls.RegisterControl.resources
 C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.FormShop.resources
+C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Migrations.InitialTables.resources
+C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Migrations.InitialChanges.resources
+C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Controls.EntryControl.resources
+C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Migrations.AddingDefaultValue.resources
+C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Controls.CategoryControl.resources
+C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Controls.ReportControl.resources

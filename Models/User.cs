@@ -8,13 +8,13 @@ using ProductStock.Validations;
 
 namespace ProductStock.Models
 {
-    [EmailValidationAttribute]
+    
     public class User : Entity
     {
         public User()
         {
-            Products = new List<Product>();
-            Logs = new List<Log>();
+            //Products = new List<Product>();
+            //Logs = new List<Log>();
         }
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }

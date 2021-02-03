@@ -10,7 +10,7 @@ namespace ProductStock.Models
     {
         public Category()
         {
-            Products = new List<Product>();
+            //Products = new List<Product>();
         }
         public List<Product> Products { get; set; }
     }

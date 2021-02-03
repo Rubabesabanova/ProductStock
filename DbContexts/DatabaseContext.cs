@@ -15,5 +15,8 @@ namespace ProductStock.DbContexts
         public DbSet<Product> Products { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        
     }
+    
 }

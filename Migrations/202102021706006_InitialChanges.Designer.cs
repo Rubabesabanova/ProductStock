@@ -7,13 +7,13 @@ namespace ProductStock.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddingInitialTables : IMigrationMetadata
+    public sealed partial class InitialChanges : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingInitialTables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialChanges));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101301322339_AddingInitialTables"; }
+            get { return "202102021706006_InitialChanges"; }
         }
         
         string IMigrationMetadata.Source

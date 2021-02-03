@@ -30,7 +30,10 @@ namespace ProductStock.Controls
         private void InitializeComponent()
         {
             this.gbxRegister = new System.Windows.Forms.GroupBox();
+            this.txbRegisterPhone = new System.Windows.Forms.TextBox();
+            this.lblRegisterPhone = new System.Windows.Forms.Label();
             this.txbRegisterSurname = new System.Windows.Forms.TextBox();
+            this.lblRegisterSurname = new System.Windows.Forms.Label();
             this.llblRegisterLogin = new System.Windows.Forms.LinkLabel();
             this.btnRegister = new System.Windows.Forms.Button();
             this.txbRegisterPassword = new System.Windows.Forms.TextBox();
@@ -39,12 +42,13 @@ namespace ProductStock.Controls
             this.lblRegisterName = new System.Windows.Forms.Label();
             this.txbRegisterEmail = new System.Windows.Forms.TextBox();
             this.lblRegisterEmail = new System.Windows.Forms.Label();
-            this.lblRegisterSurname = new System.Windows.Forms.Label();
             this.gbxRegister.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxRegister
             // 
+            this.gbxRegister.Controls.Add(this.txbRegisterPhone);
+            this.gbxRegister.Controls.Add(this.lblRegisterPhone);
             this.gbxRegister.Controls.Add(this.txbRegisterSurname);
             this.gbxRegister.Controls.Add(this.lblRegisterSurname);
             this.gbxRegister.Controls.Add(this.llblRegisterLogin);
@@ -58,10 +62,27 @@ namespace ProductStock.Controls
             this.gbxRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxRegister.Location = new System.Drawing.Point(25, 28);
             this.gbxRegister.Name = "gbxRegister";
-            this.gbxRegister.Size = new System.Drawing.Size(291, 406);
+            this.gbxRegister.Size = new System.Drawing.Size(291, 442);
             this.gbxRegister.TabIndex = 0;
             this.gbxRegister.TabStop = false;
             this.gbxRegister.Text = "Register";
+            // 
+            // txbRegisterPhone
+            // 
+            this.txbRegisterPhone.Location = new System.Drawing.Point(25, 329);
+            this.txbRegisterPhone.Name = "txbRegisterPhone";
+            this.txbRegisterPhone.Size = new System.Drawing.Size(229, 29);
+            this.txbRegisterPhone.TabIndex = 13;
+            // 
+            // lblRegisterPhone
+            // 
+            this.lblRegisterPhone.AutoSize = true;
+            this.lblRegisterPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegisterPhone.Location = new System.Drawing.Point(25, 306);
+            this.lblRegisterPhone.Name = "lblRegisterPhone";
+            this.lblRegisterPhone.Size = new System.Drawing.Size(55, 20);
+            this.lblRegisterPhone.TabIndex = 12;
+            this.lblRegisterPhone.Text = "Phone";
             // 
             // txbRegisterSurname
             // 
@@ -70,11 +91,21 @@ namespace ProductStock.Controls
             this.txbRegisterSurname.Size = new System.Drawing.Size(229, 29);
             this.txbRegisterSurname.TabIndex = 11;
             // 
+            // lblRegisterSurname
+            // 
+            this.lblRegisterSurname.AutoSize = true;
+            this.lblRegisterSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegisterSurname.Location = new System.Drawing.Point(25, 180);
+            this.lblRegisterSurname.Name = "lblRegisterSurname";
+            this.lblRegisterSurname.Size = new System.Drawing.Size(74, 20);
+            this.lblRegisterSurname.TabIndex = 10;
+            this.lblRegisterSurname.Text = "Surname";
+            // 
             // llblRegisterLogin
             // 
             this.llblRegisterLogin.AutoSize = true;
             this.llblRegisterLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblRegisterLogin.Location = new System.Drawing.Point(25, 369);
+            this.llblRegisterLogin.Location = new System.Drawing.Point(25, 408);
             this.llblRegisterLogin.Name = "llblRegisterLogin";
             this.llblRegisterLogin.Size = new System.Drawing.Size(234, 18);
             this.llblRegisterLogin.TabIndex = 9;
@@ -86,7 +117,7 @@ namespace ProductStock.Controls
             // 
             this.btnRegister.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnRegister.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnRegister.Location = new System.Drawing.Point(28, 314);
+            this.btnRegister.Location = new System.Drawing.Point(29, 364);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(226, 41);
             this.btnRegister.TabIndex = 8;
@@ -106,7 +137,7 @@ namespace ProductStock.Controls
             // 
             this.lblRegisterPassword.AutoSize = true;
             this.lblRegisterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegisterPassword.Location = new System.Drawing.Point(21, 250);
+            this.lblRegisterPassword.Location = new System.Drawing.Point(25, 250);
             this.lblRegisterPassword.Name = "lblRegisterPassword";
             this.lblRegisterPassword.Size = new System.Drawing.Size(78, 20);
             this.lblRegisterPassword.TabIndex = 6;
@@ -146,21 +177,11 @@ namespace ProductStock.Controls
             this.lblRegisterEmail.TabIndex = 0;
             this.lblRegisterEmail.Text = "Email\r\n";
             // 
-            // lblRegisterSurname
-            // 
-            this.lblRegisterSurname.AutoSize = true;
-            this.lblRegisterSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegisterSurname.Location = new System.Drawing.Point(25, 180);
-            this.lblRegisterSurname.Name = "lblRegisterSurname";
-            this.lblRegisterSurname.Size = new System.Drawing.Size(74, 20);
-            this.lblRegisterSurname.TabIndex = 10;
-            this.lblRegisterSurname.Text = "Surname";
-            // 
             // RegisterControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 457);
+            this.ClientSize = new System.Drawing.Size(341, 482);
             this.Controls.Add(this.gbxRegister);
             this.Name = "RegisterControl";
             this.Text = "Register now!";
@@ -183,5 +204,7 @@ namespace ProductStock.Controls
         private System.Windows.Forms.LinkLabel llblRegisterLogin;
         public System.Windows.Forms.TextBox txbRegisterSurname;
         private System.Windows.Forms.Label lblRegisterSurname;
+        public System.Windows.Forms.TextBox txbRegisterPhone;
+        private System.Windows.Forms.Label lblRegisterPhone;
     }
 }

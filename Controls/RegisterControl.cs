@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProductStock.DAL;
 using ProductStock.DbContexts;
+using ProductStock.Enums;
 using ProductStock.Models;
 using ProductStock.Validations;
 
@@ -36,17 +37,20 @@ namespace ProductStock.Controls
                 Name = this.txbRegisterName.Text,
                 Surname = this.txbRegisterSurname.Text,
                 Email = this.txbRegisterEmail.Text,
-                Password = this.txbRegisterPassword.Text
+                Password = this.txbRegisterPassword.Text,
+                Phone = this.txbRegisterPhone.Text,
+                Type = (int) UserTypeEnum.User,
             };
-            bool isValid= Validate(user);
-            bool IsExist = ValidateEmail(user);
-            if (!IsExist)
+            bool isValid= ValidationOperation<User>.ValidateOperation(user);
+            bool IsUnique = EmailValidation.IsUniqueEmail(user);
+            if (IsUnique)
             {
-                if (!isValid)
+                if (isValid)
                 {
                     UserDAL userDAL = new UserDAL();
                     userDAL.Add(user);
                     MessageBox.Show("Successfully Registered!");
+
                 }
             }
             else
@@ -64,31 +68,15 @@ namespace ProductStock.Controls
             loginControl.ShowDialog();
             this.Close();
         }
-        static bool Validate(User user)
-        {
-            ValidationContext context = new ValidationContext(user);
-            List<ValidationResult> errors = new List<ValidationResult>();
 
-            if (!Validator.TryValidateObject(user, context, errors, true))
-            {
-                foreach (ValidationResult result in errors)
-                {
-                    MessageBox.Show(result.ErrorMessage);
-                    return false;
-                }
-            }
-            return true;
-        }
-        static bool ValidateEmail(User user)
+        private void btnTest_Click(object sender, EventArgs e)
         {
-            Type t = typeof(User);
-            object[] attributes = t.GetCustomAttributes(false);
-            foreach (EmailValidationAttribute attribute in attributes)
-            {
-                if (attribute.Emails.Contains(user.Email)) return false;
-                else return true;
-            }
-            return false;
+            UserDAL userDAL = new UserDAL();
+            userDAL.Show();
         }
+
+       
     }
+
+    
 }
