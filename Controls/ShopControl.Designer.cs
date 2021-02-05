@@ -34,7 +34,7 @@ namespace ProductStock
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnSearchShop = new System.Windows.Forms.Button();
             this.lblPriceSearchShop = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbPriceSearchShop = new System.Windows.Forms.TextBox();
             this.lblCountSearchShop = new System.Windows.Forms.Label();
             this.txbCountSearchShop = new System.Windows.Forms.TextBox();
             this.lblCategorySearchShop = new System.Windows.Forms.Label();
@@ -74,6 +74,7 @@ namespace ProductStock
             this.dgvShop.Name = "dgvShop";
             this.dgvShop.Size = new System.Drawing.Size(448, 352);
             this.dgvShop.TabIndex = 0;
+            this.dgvShop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShop_CellClick);
             // 
             // tcShop
             // 
@@ -89,7 +90,7 @@ namespace ProductStock
             // 
             this.tabPage1.Controls.Add(this.btnSearchShop);
             this.tabPage1.Controls.Add(this.lblPriceSearchShop);
-            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.txbPriceSearchShop);
             this.tabPage1.Controls.Add(this.lblCountSearchShop);
             this.tabPage1.Controls.Add(this.txbCountSearchShop);
             this.tabPage1.Controls.Add(this.lblCategorySearchShop);
@@ -115,6 +116,7 @@ namespace ProductStock
             this.btnSearchShop.TabIndex = 10;
             this.btnSearchShop.Text = "Search";
             this.btnSearchShop.UseVisualStyleBackColor = false;
+            this.btnSearchShop.Click += new System.EventHandler(this.btnSearchShop_Click);
             // 
             // lblPriceSearchShop
             // 
@@ -125,12 +127,12 @@ namespace ProductStock
             this.lblPriceSearchShop.TabIndex = 9;
             this.lblPriceSearchShop.Text = "Price";
             // 
-            // textBox4
+            // txbPriceSearchShop
             // 
-            this.textBox4.Location = new System.Drawing.Point(28, 255);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 20);
-            this.textBox4.TabIndex = 8;
+            this.txbPriceSearchShop.Location = new System.Drawing.Point(28, 255);
+            this.txbPriceSearchShop.Name = "txbPriceSearchShop";
+            this.txbPriceSearchShop.Size = new System.Drawing.Size(197, 20);
+            this.txbPriceSearchShop.TabIndex = 8;
             // 
             // lblCountSearchShop
             // 
@@ -227,6 +229,7 @@ namespace ProductStock
             this.btnDeleteCrudShop.TabIndex = 24;
             this.btnDeleteCrudShop.Text = "Delete";
             this.btnDeleteCrudShop.UseVisualStyleBackColor = false;
+            this.btnDeleteCrudShop.Click += new System.EventHandler(this.btnDeleteCrudShop_Click);
             // 
             // btnUpdateCrudShop
             // 
@@ -237,6 +240,7 @@ namespace ProductStock
             this.btnUpdateCrudShop.TabIndex = 22;
             this.btnUpdateCrudShop.Text = "Update";
             this.btnUpdateCrudShop.UseVisualStyleBackColor = false;
+            this.btnUpdateCrudShop.Click += new System.EventHandler(this.btnUpdateCrudShop_Click);
             // 
             // btnAddCrudShop
             // 
@@ -332,6 +336,7 @@ namespace ProductStock
             this.cmbCategorySrchShop.Name = "cmbCategorySrchShop";
             this.cmbCategorySrchShop.Size = new System.Drawing.Size(159, 21);
             this.cmbCategorySrchShop.TabIndex = 3;
+            this.cmbCategorySrchShop.SelectedIndexChanged += new System.EventHandler(this.cmbCategorySrchShop_SelectedIndexChanged);
             // 
             // lblCategorySrchShop
             // 
@@ -357,6 +362,7 @@ namespace ProductStock
             this.txbProductNameSrchShop.Name = "txbProductNameSrchShop";
             this.txbProductNameSrchShop.Size = new System.Drawing.Size(166, 20);
             this.txbProductNameSrchShop.TabIndex = 6;
+            this.txbProductNameSrchShop.TextChanged += new System.EventHandler(this.txbProductNameSrchShop_TextChanged);
             // 
             // FormShop
             // 
@@ -398,7 +404,7 @@ namespace ProductStock
         private System.Windows.Forms.Label lblCountSearchShop;
         private System.Windows.Forms.TextBox txbCountSearchShop;
         private System.Windows.Forms.Label lblPriceSearchShop;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbPriceSearchShop;
         private System.Windows.Forms.Button btnSearchShop;
         private System.Windows.Forms.Button btnShowAllShop;
         private System.Windows.Forms.ComboBox cmbCategorySrchShop;

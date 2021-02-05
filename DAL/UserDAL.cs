@@ -19,7 +19,7 @@ namespace ProductStock.DAL
             }
         }
 
-        public void Delete()
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -38,11 +38,10 @@ namespace ProductStock.DAL
                 return context.Users.FirstOrDefault(expression);
             }
         }
-        public void Update()
+
+        public void Update(User item)
         {
             throw new NotImplementedException();
         }
-
-        
     }
 }

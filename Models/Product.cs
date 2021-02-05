@@ -12,7 +12,7 @@ namespace ProductStock.Models
     {
         public Product()
         {
-            //Logs = new List<Log>();
+            Logs = new List<Log>();
         }
         [Required(ErrorMessage = "The field is required")]
         public int Count { get; set; }

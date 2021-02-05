@@ -74,6 +74,7 @@ namespace ProductStock
             foreach (Category category in categoryDAL.Show())
             {
                 cmbCategoryCrudShop.Items.Add(category.Id + "-" + category.Name);
+                cmbCategorySrchShop.Items.Add(category.Id + "-" + category.Name);
             }
         }
 
@@ -81,6 +82,71 @@ namespace ProductStock
         {
             ProductDAL productDAL = new ProductDAL();
             productDAL.GetGridData(dgvShop);
+        }
+
+        private void dgvShop_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ProductDAL productDAL = new ProductDAL();
+            var product = productDAL.GetByFilter(x => x.Id == Convert.ToInt32(dgvShop.CurrentRow.Cells[0].Value));
+            txbNameCrudShop.Text = product.Name;
+            txbPriceCrudShop.Text = product.Price.ToString();
+            txbCountCrudShop.Text = product.Count.ToString();
+            CategoryDAL categoryDAL = new CategoryDAL();
+            var category = categoryDAL.GetByFilter(x => x.Id == Convert.ToInt32(product.CategoryId));
+            cmbCategoryCrudShop.SelectedItem = category.Id.ToString() + "-" + category.Name.ToString();
+        }
+
+        private void btnUpdateCrudShop_Click(object sender, EventArgs e)
+        {
+            ProductDAL productDAL = new ProductDAL();
+            var product = productDAL.GetByFilter(x => x.Id == Convert.ToInt32(dgvShop.CurrentRow.Cells[0].Value));
+            Product productItem = new Product()
+            {
+                Id = Convert.ToInt32(dgvShop.CurrentRow.Cells[0].Value),
+                Name = this.txbNameCrudShop.Text,
+                CategoryId = Convert.ToInt32(this.cmbCategoryCrudShop.Text.Split('-')[0]),
+                Count = Convert.ToInt32(this.txbCountCrudShop.Text),
+                Price = Convert.ToDouble(this.txbPriceCrudShop.Text),
+                UserId = product.UserId,
+                Status = (int)ProductStatusEnum.Active,
+            };
+            productDAL.Update(productItem);
+            MessageBox.Show("Successfully Deleted");
+            productDAL.GetGridData(dgvShop);
+        }
+
+        private void btnDeleteCrudShop_Click(object sender, EventArgs e)
+        {
+            ProductDAL productDAL = new ProductDAL();
+            productDAL.Delete(Convert.ToInt32(dgvShop.CurrentRow.Cells[0].Value));
+            MessageBox.Show("Successfully Deleted");
+            productDAL.GetGridData(dgvShop);
+        }
+
+        private void txbProductNameSrchShop_TextChanged(object sender, EventArgs e)
+        {
+            ProductDAL productDAL = new ProductDAL();
+            productDAL.GetGridByName(dgvShop, txbProductNameSrchShop.Text);
+        }
+
+        private void cmbCategorySrchShop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProductDAL productDAL = new ProductDAL();
+            productDAL.GetGridByCategory(dgvShop, cmbCategorySrchShop.Text.Split('-')[1]);
+        }
+
+        private void btnSearchShop_Click(object sender, EventArgs e)
+        {
+            List<string> SearchString = new List<string>
+            {
+                txbNameSearchShop.Text,
+                cmbCategorySearchShop.Text,
+                txbUserSearchShop.Text,
+                txbCountSearchShop.Text,
+                txbPriceSearchShop.Text
+            };
+            ProductDAL productDAL = new ProductDAL();
+            productDAL.GetGridAdvancedSearch(dgvShop, SearchString);
         }
     }
 }

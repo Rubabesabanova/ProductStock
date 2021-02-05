@@ -10,7 +10,7 @@ namespace ProductStock.DAL
     {
         void Add(T item);
         List<T> Show();
-        void Update();
-        void Delete();
+        void Update(T item);
+        void Delete(int id);
     }
 }
