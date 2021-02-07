@@ -31,15 +31,15 @@ namespace ProductStock.Controls
         {
             this.tcShop = new System.Windows.Forms.TabControl();
             this.CrudProductsShop = new System.Windows.Forms.TabPage();
-            this.btnDeleteCrudShop = new System.Windows.Forms.Button();
-            this.btnUpdateCrudShop = new System.Windows.Forms.Button();
-            this.btnAddCrudShop = new System.Windows.Forms.Button();
-            this.lblNameCrudShop = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dgvShop = new System.Windows.Forms.DataGridView();
+            this.btnDeleteCategories = new System.Windows.Forms.Button();
+            this.btnUpdateCategories = new System.Windows.Forms.Button();
+            this.btnAddCategories = new System.Windows.Forms.Button();
+            this.lblNameCategories = new System.Windows.Forms.Label();
+            this.txbNameCategories = new System.Windows.Forms.TextBox();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
             this.tcShop.SuspendLayout();
             this.CrudProductsShop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // tcShop
@@ -53,11 +53,11 @@ namespace ProductStock.Controls
             // 
             // CrudProductsShop
             // 
-            this.CrudProductsShop.Controls.Add(this.btnDeleteCrudShop);
-            this.CrudProductsShop.Controls.Add(this.btnUpdateCrudShop);
-            this.CrudProductsShop.Controls.Add(this.btnAddCrudShop);
-            this.CrudProductsShop.Controls.Add(this.lblNameCrudShop);
-            this.CrudProductsShop.Controls.Add(this.textBox5);
+            this.CrudProductsShop.Controls.Add(this.btnDeleteCategories);
+            this.CrudProductsShop.Controls.Add(this.btnUpdateCategories);
+            this.CrudProductsShop.Controls.Add(this.btnAddCategories);
+            this.CrudProductsShop.Controls.Add(this.lblNameCategories);
+            this.CrudProductsShop.Controls.Add(this.txbNameCategories);
             this.CrudProductsShop.Location = new System.Drawing.Point(4, 22);
             this.CrudProductsShop.Name = "CrudProductsShop";
             this.CrudProductsShop.Padding = new System.Windows.Forms.Padding(3);
@@ -66,60 +66,64 @@ namespace ProductStock.Controls
             this.CrudProductsShop.Text = "CRUD Categories";
             this.CrudProductsShop.UseVisualStyleBackColor = true;
             // 
-            // btnDeleteCrudShop
+            // btnDeleteCategories
             // 
-            this.btnDeleteCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnDeleteCrudShop.Location = new System.Drawing.Point(34, 134);
-            this.btnDeleteCrudShop.Name = "btnDeleteCrudShop";
-            this.btnDeleteCrudShop.Size = new System.Drawing.Size(196, 35);
-            this.btnDeleteCrudShop.TabIndex = 24;
-            this.btnDeleteCrudShop.Text = "Delete";
-            this.btnDeleteCrudShop.UseVisualStyleBackColor = false;
+            this.btnDeleteCategories.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDeleteCategories.Location = new System.Drawing.Point(34, 134);
+            this.btnDeleteCategories.Name = "btnDeleteCategories";
+            this.btnDeleteCategories.Size = new System.Drawing.Size(196, 35);
+            this.btnDeleteCategories.TabIndex = 24;
+            this.btnDeleteCategories.Text = "Delete";
+            this.btnDeleteCategories.UseVisualStyleBackColor = false;
+            this.btnDeleteCategories.Click += new System.EventHandler(this.btnDeleteCategories_Click);
             // 
-            // btnUpdateCrudShop
+            // btnUpdateCategories
             // 
-            this.btnUpdateCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnUpdateCrudShop.Location = new System.Drawing.Point(130, 93);
-            this.btnUpdateCrudShop.Name = "btnUpdateCrudShop";
-            this.btnUpdateCrudShop.Size = new System.Drawing.Size(100, 35);
-            this.btnUpdateCrudShop.TabIndex = 22;
-            this.btnUpdateCrudShop.Text = "Update";
-            this.btnUpdateCrudShop.UseVisualStyleBackColor = false;
+            this.btnUpdateCategories.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUpdateCategories.Location = new System.Drawing.Point(130, 93);
+            this.btnUpdateCategories.Name = "btnUpdateCategories";
+            this.btnUpdateCategories.Size = new System.Drawing.Size(100, 35);
+            this.btnUpdateCategories.TabIndex = 22;
+            this.btnUpdateCategories.Text = "Update";
+            this.btnUpdateCategories.UseVisualStyleBackColor = false;
+            this.btnUpdateCategories.Click += new System.EventHandler(this.btnUpdateCategories_Click);
             // 
-            // btnAddCrudShop
+            // btnAddCategories
             // 
-            this.btnAddCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAddCrudShop.Location = new System.Drawing.Point(34, 93);
-            this.btnAddCrudShop.Name = "btnAddCrudShop";
-            this.btnAddCrudShop.Size = new System.Drawing.Size(95, 35);
-            this.btnAddCrudShop.TabIndex = 21;
-            this.btnAddCrudShop.Text = "Add";
-            this.btnAddCrudShop.UseVisualStyleBackColor = false;
+            this.btnAddCategories.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddCategories.Location = new System.Drawing.Point(34, 93);
+            this.btnAddCategories.Name = "btnAddCategories";
+            this.btnAddCategories.Size = new System.Drawing.Size(95, 35);
+            this.btnAddCategories.TabIndex = 21;
+            this.btnAddCategories.Text = "Add";
+            this.btnAddCategories.UseVisualStyleBackColor = false;
+            this.btnAddCategories.Click += new System.EventHandler(this.btnAddCategories_Click);
             // 
-            // lblNameCrudShop
+            // lblNameCategories
             // 
-            this.lblNameCrudShop.AutoSize = true;
-            this.lblNameCrudShop.Location = new System.Drawing.Point(31, 32);
-            this.lblNameCrudShop.Name = "lblNameCrudShop";
-            this.lblNameCrudShop.Size = new System.Drawing.Size(35, 13);
-            this.lblNameCrudShop.TabIndex = 12;
-            this.lblNameCrudShop.Text = "Name";
+            this.lblNameCategories.AutoSize = true;
+            this.lblNameCategories.Location = new System.Drawing.Point(31, 32);
+            this.lblNameCategories.Name = "lblNameCategories";
+            this.lblNameCategories.Size = new System.Drawing.Size(35, 13);
+            this.lblNameCategories.TabIndex = 12;
+            this.lblNameCategories.Text = "Name";
             // 
-            // textBox5
+            // txbNameCategories
             // 
-            this.textBox5.Location = new System.Drawing.Point(34, 57);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(202, 20);
-            this.textBox5.TabIndex = 11;
+            this.txbNameCategories.Location = new System.Drawing.Point(34, 57);
+            this.txbNameCategories.Name = "txbNameCategories";
+            this.txbNameCategories.Size = new System.Drawing.Size(202, 20);
+            this.txbNameCategories.TabIndex = 11;
             // 
-            // dgvShop
+            // dgvCategory
             // 
-            this.dgvShop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvShop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShop.Location = new System.Drawing.Point(330, 31);
-            this.dgvShop.Name = "dgvShop";
-            this.dgvShop.Size = new System.Drawing.Size(448, 352);
-            this.dgvShop.TabIndex = 2;
+            this.dgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Location = new System.Drawing.Point(330, 31);
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.Size = new System.Drawing.Size(448, 352);
+            this.dgvCategory.TabIndex = 2;
+            this.dgvCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellClick);
             // 
             // CategoryControl
             // 
@@ -127,13 +131,13 @@ namespace ProductStock.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 408);
             this.Controls.Add(this.tcShop);
-            this.Controls.Add(this.dgvShop);
+            this.Controls.Add(this.dgvCategory);
             this.Name = "CategoryControl";
             this.Text = "CategoryControl";
             this.tcShop.ResumeLayout(false);
             this.CrudProductsShop.ResumeLayout(false);
             this.CrudProductsShop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -142,11 +146,11 @@ namespace ProductStock.Controls
 
         private System.Windows.Forms.TabControl tcShop;
         private System.Windows.Forms.TabPage CrudProductsShop;
-        private System.Windows.Forms.Button btnDeleteCrudShop;
-        private System.Windows.Forms.Button btnUpdateCrudShop;
-        private System.Windows.Forms.Button btnAddCrudShop;
-        private System.Windows.Forms.Label lblNameCrudShop;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DataGridView dgvShop;
+        private System.Windows.Forms.Button btnDeleteCategories;
+        private System.Windows.Forms.Button btnUpdateCategories;
+        private System.Windows.Forms.Button btnAddCategories;
+        private System.Windows.Forms.Label lblNameCategories;
+        private System.Windows.Forms.TextBox txbNameCategories;
+        private System.Windows.Forms.DataGridView dgvCategory;
     }
 }

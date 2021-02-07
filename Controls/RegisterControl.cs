@@ -50,16 +50,13 @@ namespace ProductStock.Controls
                     UserDAL userDAL = new UserDAL();
                     userDAL.Add(user);
                     MessageBox.Show("Successfully Registered!");
-
+                    this.Close();
                 }
             }
             else
             {
                 MessageBox.Show("The email is already used.");
             }
-            this.Close();
-            
-
         }
 
         private void llblRegisterLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\IOperation.cs" />
+    <Compile Include="DAL\LogDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="DbContexts\DatabaseContext.cs" />
@@ -111,6 +112,14 @@
     <Compile Include="Migrations\202102030928338_AddingDefaultValue.cs" />
     <Compile Include="Migrations\202102030928338_AddingDefaultValue.designer.cs">
       <DependentUpon>202102030928338_AddingDefaultValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102070744408_AddingModifiedDate.cs" />
+    <Compile Include="Migrations\202102070744408_AddingModifiedDate.designer.cs">
+      <DependentUpon>202102070744408_AddingModifiedDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102070808446_UpdatingModifiedDate.cs" />
+    <Compile Include="Migrations\202102070808446_UpdatingModifiedDate.designer.cs">
+      <DependentUpon>202102070808446_UpdatingModifiedDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -148,6 +157,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102030928338_AddingDefaultValue.resx">
       <DependentUpon>202102030928338_AddingDefaultValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102070744408_AddingModifiedDate.resx">
+      <DependentUpon>202102070744408_AddingModifiedDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102070808446_UpdatingModifiedDate.resx">
+      <DependentUpon>202102070808446_UpdatingModifiedDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

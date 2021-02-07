@@ -44,6 +44,8 @@ namespace ProductStock
             this.lblNameSearchShop = new System.Windows.Forms.Label();
             this.txbNameSearchShop = new System.Windows.Forms.TextBox();
             this.CrudProductsShop = new System.Windows.Forms.TabPage();
+            this.lblDescriptionCrudProducts = new System.Windows.Forms.Label();
+            this.txbDescriptionCrudProducts = new System.Windows.Forms.TextBox();
             this.btnDeleteCrudShop = new System.Windows.Forms.Button();
             this.btnUpdateCrudShop = new System.Windows.Forms.Button();
             this.btnAddCrudShop = new System.Windows.Forms.Button();
@@ -201,6 +203,8 @@ namespace ProductStock
             // 
             // CrudProductsShop
             // 
+            this.CrudProductsShop.Controls.Add(this.lblDescriptionCrudProducts);
+            this.CrudProductsShop.Controls.Add(this.txbDescriptionCrudProducts);
             this.CrudProductsShop.Controls.Add(this.btnDeleteCrudShop);
             this.CrudProductsShop.Controls.Add(this.btnUpdateCrudShop);
             this.CrudProductsShop.Controls.Add(this.btnAddCrudShop);
@@ -220,10 +224,28 @@ namespace ProductStock
             this.CrudProductsShop.Text = "CRUD Products";
             this.CrudProductsShop.UseVisualStyleBackColor = true;
             // 
+            // lblDescriptionCrudProducts
+            // 
+            this.lblDescriptionCrudProducts.AutoSize = true;
+            this.lblDescriptionCrudProducts.Location = new System.Drawing.Point(28, 201);
+            this.lblDescriptionCrudProducts.Name = "lblDescriptionCrudProducts";
+            this.lblDescriptionCrudProducts.Size = new System.Drawing.Size(60, 13);
+            this.lblDescriptionCrudProducts.TabIndex = 26;
+            this.lblDescriptionCrudProducts.Text = "Description";
+            this.lblDescriptionCrudProducts.Visible = false;
+            // 
+            // txbDescriptionCrudProducts
+            // 
+            this.txbDescriptionCrudProducts.Location = new System.Drawing.Point(28, 217);
+            this.txbDescriptionCrudProducts.Name = "txbDescriptionCrudProducts";
+            this.txbDescriptionCrudProducts.Size = new System.Drawing.Size(197, 20);
+            this.txbDescriptionCrudProducts.TabIndex = 25;
+            this.txbDescriptionCrudProducts.Visible = false;
+            // 
             // btnDeleteCrudShop
             // 
             this.btnDeleteCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnDeleteCrudShop.Location = new System.Drawing.Point(31, 276);
+            this.btnDeleteCrudShop.Location = new System.Drawing.Point(31, 284);
             this.btnDeleteCrudShop.Name = "btnDeleteCrudShop";
             this.btnDeleteCrudShop.Size = new System.Drawing.Size(194, 35);
             this.btnDeleteCrudShop.TabIndex = 24;
@@ -234,7 +256,7 @@ namespace ProductStock
             // btnUpdateCrudShop
             // 
             this.btnUpdateCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnUpdateCrudShop.Location = new System.Drawing.Point(127, 235);
+            this.btnUpdateCrudShop.Location = new System.Drawing.Point(127, 243);
             this.btnUpdateCrudShop.Name = "btnUpdateCrudShop";
             this.btnUpdateCrudShop.Size = new System.Drawing.Size(98, 35);
             this.btnUpdateCrudShop.TabIndex = 22;
@@ -245,7 +267,7 @@ namespace ProductStock
             // btnAddCrudShop
             // 
             this.btnAddCrudShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAddCrudShop.Location = new System.Drawing.Point(28, 235);
+            this.btnAddCrudShop.Location = new System.Drawing.Point(28, 243);
             this.btnAddCrudShop.Name = "btnAddCrudShop";
             this.btnAddCrudShop.Size = new System.Drawing.Size(93, 35);
             this.btnAddCrudShop.TabIndex = 21;
@@ -256,7 +278,7 @@ namespace ProductStock
             // lblPriceCrudShop
             // 
             this.lblPriceCrudShop.AutoSize = true;
-            this.lblPriceCrudShop.Location = new System.Drawing.Point(28, 181);
+            this.lblPriceCrudShop.Location = new System.Drawing.Point(28, 164);
             this.lblPriceCrudShop.Name = "lblPriceCrudShop";
             this.lblPriceCrudShop.Size = new System.Drawing.Size(31, 13);
             this.lblPriceCrudShop.TabIndex = 20;
@@ -264,7 +286,7 @@ namespace ProductStock
             // 
             // txbPriceCrudShop
             // 
-            this.txbPriceCrudShop.Location = new System.Drawing.Point(28, 197);
+            this.txbPriceCrudShop.Location = new System.Drawing.Point(28, 180);
             this.txbPriceCrudShop.Name = "txbPriceCrudShop";
             this.txbPriceCrudShop.Size = new System.Drawing.Size(197, 20);
             this.txbPriceCrudShop.TabIndex = 19;
@@ -272,7 +294,7 @@ namespace ProductStock
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 132);
+            this.label2.Location = new System.Drawing.Point(28, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 18;
@@ -280,7 +302,7 @@ namespace ProductStock
             // 
             // txbCountCrudShop
             // 
-            this.txbCountCrudShop.Location = new System.Drawing.Point(28, 148);
+            this.txbCountCrudShop.Location = new System.Drawing.Point(28, 131);
             this.txbCountCrudShop.Name = "txbCountCrudShop";
             this.txbCountCrudShop.Size = new System.Drawing.Size(197, 20);
             this.txbCountCrudShop.TabIndex = 17;
@@ -288,7 +310,7 @@ namespace ProductStock
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 77);
+            this.label3.Location = new System.Drawing.Point(25, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 16;
@@ -297,7 +319,7 @@ namespace ProductStock
             // cmbCategoryCrudShop
             // 
             this.cmbCategoryCrudShop.FormattingEnabled = true;
-            this.cmbCategoryCrudShop.Location = new System.Drawing.Point(28, 93);
+            this.cmbCategoryCrudShop.Location = new System.Drawing.Point(28, 76);
             this.cmbCategoryCrudShop.Name = "cmbCategoryCrudShop";
             this.cmbCategoryCrudShop.Size = new System.Drawing.Size(200, 21);
             this.cmbCategoryCrudShop.TabIndex = 15;
@@ -305,7 +327,7 @@ namespace ProductStock
             // lblNameCrudShop
             // 
             this.lblNameCrudShop.AutoSize = true;
-            this.lblNameCrudShop.Location = new System.Drawing.Point(28, 21);
+            this.lblNameCrudShop.Location = new System.Drawing.Point(28, 4);
             this.lblNameCrudShop.Name = "lblNameCrudShop";
             this.lblNameCrudShop.Size = new System.Drawing.Size(35, 13);
             this.lblNameCrudShop.TabIndex = 12;
@@ -313,7 +335,7 @@ namespace ProductStock
             // 
             // txbNameCrudShop
             // 
-            this.txbNameCrudShop.Location = new System.Drawing.Point(28, 40);
+            this.txbNameCrudShop.Location = new System.Drawing.Point(28, 23);
             this.txbNameCrudShop.Name = "txbNameCrudShop";
             this.txbNameCrudShop.Size = new System.Drawing.Size(200, 20);
             this.txbNameCrudShop.TabIndex = 11;
@@ -321,9 +343,9 @@ namespace ProductStock
             // btnShowAllShop
             // 
             this.btnShowAllShop.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnShowAllShop.Location = new System.Drawing.Point(25, 20);
+            this.btnShowAllShop.Location = new System.Drawing.Point(78, 20);
             this.btnShowAllShop.Name = "btnShowAllShop";
-            this.btnShowAllShop.Size = new System.Drawing.Size(121, 21);
+            this.btnShowAllShop.Size = new System.Drawing.Size(78, 21);
             this.btnShowAllShop.TabIndex = 2;
             this.btnShowAllShop.Text = "Show All";
             this.btnShowAllShop.UseVisualStyleBackColor = false;
@@ -422,6 +444,8 @@ namespace ProductStock
         private System.Windows.Forms.TextBox txbNameCrudShop;
         private System.Windows.Forms.Button btnUpdateCrudShop;
         private System.Windows.Forms.Button btnDeleteCrudShop;
+        private System.Windows.Forms.Label lblDescriptionCrudProducts;
+        private System.Windows.Forms.TextBox txbDescriptionCrudProducts;
     }
 }
 

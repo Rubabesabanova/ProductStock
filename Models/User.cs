@@ -21,7 +21,7 @@ namespace ProductStock.Models
         [Required(ErrorMessage = "The field is required")]
         public string Password { get; set; }
         [Required(ErrorMessage = "The field is required")]
-        [MinLength(2, ErrorMessage = "The minimum length is 2 characters")]
+        [MinLength(2, ErrorMessage = "The minimum length of Surname is 2 characters")]
         public string Surname { get; set; }
         [Required(ErrorMessage = "The field is required")]
         [Phone(ErrorMessage = "Invalid Phone")]

@@ -40,7 +40,7 @@ namespace ProductStock.Controls
                 btnSeeReportsEntry.Size = new System.Drawing.Size(107, 51);
                 btnSeeReportsEntry.Text = "See your reports";
                 this.Controls.Add(btnSeeReportsEntry);
-                btnSeeReportsEntry.Click += new System.EventHandler(this.btnCategoryEntry_Click);
+                btnSeeReportsEntry.Click += new System.EventHandler(this.btnSeeAllReportsEntry_Click);
             }
             else if (CurrentUser.Type == 2)
             {
@@ -79,9 +79,8 @@ namespace ProductStock.Controls
 
         private void btnSeeAllEntry_Click(object sender, EventArgs e)
         {
-            FormShop formShop = new FormShop(this);
             FormShop.CurrentUser = EntryControl.CurrentUser;
-            this.Close();
+            FormShop formShop = new FormShop(this);
             formShop.ShowDialog();
         }
 
@@ -89,15 +88,13 @@ namespace ProductStock.Controls
         {
             CategoryControl formCategory = new CategoryControl(this);
             FormShop.CurrentUser = EntryControl.CurrentUser;
-            this.Close();
             formCategory.ShowDialog();
         }
 
         private void btnSeeAllReportsEntry_Click(object sender, EventArgs e)
         {
-            ReportControl formReport = new ReportControl(this);
             ReportControl.CurrentUser = EntryControl.CurrentUser;
-            this.Close();
+            ReportControl formReport = new ReportControl(this);
             formReport.ShowDialog();
         }
     }

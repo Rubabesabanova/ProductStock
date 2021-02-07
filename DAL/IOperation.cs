@@ -12,5 +12,7 @@ namespace ProductStock.DAL
         List<T> Show();
         void Update(T item);
         void Delete(int id);
+        //Getting an object filtering by expression
+        T GetByFilter(Func<T, bool> expression = null);
     }
 }

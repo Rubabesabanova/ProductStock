@@ -21,3 +21,5 @@ C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Controls.EntryContr
 C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Migrations.AddingDefaultValue.resources
 C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Controls.CategoryControl.resources
 C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Controls.ReportControl.resources
+C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Migrations.AddingModifiedDate.resources
+C:\Users\hp\source\repos\ProductStock\obj\Debug\ProductStock.Migrations.UpdatingModifiedDate.resources

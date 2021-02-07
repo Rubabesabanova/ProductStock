@@ -10,7 +10,6 @@ namespace ProductStock.Enums
     {
         Active = 1,
         Deactive,
-        Updated,
         Deleted
     }
 }

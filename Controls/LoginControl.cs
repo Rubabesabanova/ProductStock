@@ -50,21 +50,6 @@ namespace ProductStock.Controls
             }
                
         }
-        static bool Validate(User user)
-        {
-            ValidationContext context = new ValidationContext(user);
-            List<ValidationResult> errors = new List<ValidationResult>();
-
-            if (!Validator.TryValidateObject(user, context, errors, true))
-            {
-                foreach (ValidationResult result in errors)
-                {
-                    MessageBox.Show(result.ErrorMessage);
-                    return false;
-                }
-            }
-            return true;
-        }
 
         
     }

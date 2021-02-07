@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,7 @@ namespace ProductStock.DAL
                 return context.Products.ToList();
             }
         }
+        //Getting all the data for Data Grid View
         public void GetGridData(DataGridView dgv)
         {
             using (DatabaseContext context = new DatabaseContext())
@@ -48,6 +50,7 @@ namespace ProductStock.DAL
 
             }
         }
+        //Getting all the data for Data Grid View filtered by product name
         public void GetGridByName(DataGridView dgv, string key)
         {
             using (DatabaseContext context = new DatabaseContext())
@@ -67,6 +70,7 @@ namespace ProductStock.DAL
 
             }
         }
+        //Getting all the data for Data Grid View filtered by category
         public void GetGridByCategory(DataGridView dgv, string key)
         {
             using (DatabaseContext context = new DatabaseContext())
@@ -86,11 +90,13 @@ namespace ProductStock.DAL
 
             }
         }
+        //Getting all the data for Data Grid View filtered by advanced search
         public void GetGridAdvancedSearch(DataGridView dgv, List<string> key)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-                string categoryName = key[1] == null ?  key[1].Split('-')[1]: null;
+                //Sorting the fields one by one to prevent SQL error
+                string categoryName = key[1];
                 string name = key[0];
                 string userName = key[2];
                 string count = key[3];
@@ -116,6 +122,7 @@ namespace ProductStock.DAL
 
             }
         }
+        
         public Product GetByFilter(Func<Product, bool> expression = null)
         {
             using (DatabaseContext context = new DatabaseContext())
@@ -123,12 +130,23 @@ namespace ProductStock.DAL
                 return context.Products.FirstOrDefault(expression);
             }
         }
+        //Function to purchase a product
+        public void GetProduct(int id)
+        {
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                var item = GetByFilter(x => x.Id == id);
+                item.Count -= 1;
+                item.Sold += 1;
+                context.Products.AddOrUpdate(item);
+                context.SaveChanges();
+            }
+        }
 
         public void Update(Product item)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-                item.Status = Convert.ToInt32(ProductStatusEnum.Updated);
                 context.Products.AddOrUpdate(item);
                 context.SaveChanges();
             }
