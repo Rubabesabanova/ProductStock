@@ -19,6 +19,7 @@ namespace ProductStock.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
         [Required(ErrorMessage = "The field is required")]
+        [MinLength(2, ErrorMessage = "The minimum length of Password is 6 characters")]
         public string Password { get; set; }
         [Required(ErrorMessage = "The field is required")]
         [MinLength(2, ErrorMessage = "The minimum length of Surname is 2 characters")]

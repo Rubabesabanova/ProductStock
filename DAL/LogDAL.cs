@@ -149,7 +149,7 @@ namespace ProductStock.DAL
                         p.Count.Contains(count) &&
                         p.Sold.Contains(sold) &&
                         p.Description.Contains(description) &&
-                        p.Status.Contains(status) &&
+                        p.Status.Contains(status) || p.Status == null &&
                         p.Type.Contains(type) || p.Type == null).ToList();
                 dgv.DataSource = products;
 

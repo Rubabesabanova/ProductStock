@@ -35,6 +35,7 @@ namespace ProductStock.Controls
             {
                 logDAL.GetGridReport(dgvReport, CurrentUser.Email);
             }
+            GetComboBoxItems();
         }
 
         private void btnShowAllReport_Click(object sender, EventArgs e)
@@ -91,6 +92,35 @@ namespace ProductStock.Controls
             {
                 logDAL.GetGridAdvancedSearch(dgvReport, SearchString, CurrentUser.Email);
             }
+        }
+
+        private void GetCategory()
+        {
+            CategoryDAL categoryDAL = new CategoryDAL();
+            foreach (Category category in categoryDAL.Show())
+            {
+                cmbCategoryReport.Items.Add(category.Id + "-" + category.Name);
+            }
+        }
+        private void GetStatus()
+        {
+            foreach (ProductStatusEnum status in Enum.GetValues(typeof(ProductStatusEnum)))
+            {
+                cmbStatusReport.Items.Add(Convert.ToInt32(status) + "-" + status.ToString());
+            }
+        }
+        private void GetType()
+        {
+            foreach (UserTypeEnum type in Enum.GetValues(typeof(UserTypeEnum)))
+            {
+                cmbTypeReport.Items.Add(Convert.ToInt32(type) + "-" + type.ToString());
+            }
+        }
+        private void GetComboBoxItems()
+        {
+            GetCategory();
+            GetStatus();
+            GetType();
         }
     }
 }

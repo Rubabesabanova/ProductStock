@@ -33,11 +33,14 @@ namespace ProductStock
             ProductDAL productDAL = new ProductDAL();
             productDAL.GetGridData(dgvShop);
             GetCategory();
-            AddDescription();
+            GetUser();
+            AddDescriptionandUser();
         }
 
         private void btnAddCrudShop_Click(object sender, EventArgs e)
         {
+            ProductDAL productDAL = new ProductDAL();
+            UserDAL userDAL = new UserDAL();
             if (cmbCategoryCrudShop.Text!="" && txbCountCrudShop.Text!="" && txbPriceCrudShop.Text !="")
             {
                 Product product = new Product()
@@ -50,9 +53,12 @@ namespace ProductStock
                     Status = (int)ProductStatusEnum.Active,
                 };
                 bool isValid = ValidationOperation<Product>.ValidateOperation(product);
+                if (CurrentUser.Type == 2)
+                {
+                    product.UserId = userDAL.GetByFilter(x => x.Email == this.cmbUserCrudProducts.Text.Split('-')[0]).Id;
+                }
                 if (isValid)
                 {
-                    ProductDAL productDAL = new ProductDAL();
                     productDAL.Add(product);
                     MessageBox.Show("Successfully Added!");
                     productDAL.GetGridData(dgvShop);
@@ -75,7 +81,14 @@ namespace ProductStock
                 cmbCategorySearchShop.Items.Add(category.Id + "-" + category.Name);
             }
         }
-
+        private void GetUser()
+        {
+            UserDAL userDAL = new UserDAL();
+            foreach (User user in userDAL.Show())
+            {
+                cmbUserCrudProducts.Items.Add(user.Email + "-" + user.Name);
+            }
+        }
         private void btnShowAllShop_Click(object sender, EventArgs e)
         {
             ProductDAL productDAL = new ProductDAL();
@@ -104,6 +117,7 @@ namespace ProductStock
         {
 
             ProductDAL productDAL = new ProductDAL();
+            UserDAL userDAL = new UserDAL();
             var product = productDAL.GetByFilter(x => x.Id == Convert.ToInt32(dgvShop.CurrentRow.Cells[0].Value));
             if (cmbCategoryCrudShop.Text != "" && txbCountCrudShop.Text != "" && txbPriceCrudShop.Text != "")
             {
@@ -129,7 +143,7 @@ namespace ProductStock
                             Description = txbDescriptionCrudProducts.Text,
                             ProductId = Convert.ToInt32(dgvShop.CurrentRow.Cells[0].Value),
                             Type = Convert.ToInt32(LogTypeEnum.Update),
-                            ModifiedDate = DateTime.UtcNow
+                            ModifiedDate = DateTime.Now
                         };
                         if (productExists)
                         {
@@ -139,6 +153,7 @@ namespace ProductStock
                         bool isValid = ValidationOperation<Log>.ValidateOperation(log);
                         if (isValid)
                         {
+                            product.UserId = userDAL.GetByFilter(x => x.Email == this.cmbUserCrudProducts.Text.Split('-')[0]).Id;
                             productDAL.Update(productItem);
                             MessageBox.Show("Successfully Updated");
                             LogDAL.Update(log);
@@ -186,7 +201,7 @@ namespace ProductStock
                             Description = txbDescriptionCrudProducts.Text,
                             ProductId = Convert.ToInt32(dgvShop.CurrentRow.Cells[0].Value),
                             Type = Convert.ToInt32(LogTypeEnum.Delete),
-                            ModifiedDate = DateTime.UtcNow
+                            ModifiedDate = DateTime.Now
                         };
                         if (productExists)
                         {
@@ -275,12 +290,14 @@ namespace ProductStock
         }
 
         //Adding description field for Admins
-        public void AddDescription()
+        public void AddDescriptionandUser()
         {
             if (CurrentUser.Type == 2)
             {
                 lblDescriptionCrudProducts.Visible = true;
                 txbDescriptionCrudProducts.Visible = true;
+                lblUserCrudProducts.Visible = true;
+                cmbUserCrudProducts.Visible = true;
             }
             
         }
