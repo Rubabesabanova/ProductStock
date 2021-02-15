@@ -82,8 +82,8 @@ namespace ProductStock.DAL
                     Price = product.Price,
                     UserEmail = product.User.Email,
                     Category = product.Category.Name,
-                    Count = product.Count,
-                    Sold = product.Sold,
+                    Count = product.Count.ToString(),
+                    Sold = product.Sold.ToString(),
                     Description = context.Logs.ToList().Where(x => x.ProductId == product.Id).FirstOrDefault().Description,
                     Status = ((ProductStatusEnum)product.Status).ToString(),
                     Type = ((LogTypeEnum)context.Logs.ToList().Where(x => x.ProductId == product.Id).FirstOrDefault().Type).ToString(),
@@ -105,8 +105,8 @@ namespace ProductStock.DAL
                     Price = product.Price,
                     UserEmail = product.User.Email,
                     Category = product.Category.Name,
-                    Count = product.Count,
-                    Sold = product.Sold,
+                    Count = product.Count.ToString(),
+                    Sold = product.Sold.ToString(),
                     Description = context.Logs.ToList().Where(x => x.ProductId == product.Id).FirstOrDefault().Description,
                     Status = ((ProductStatusEnum)product.Status).ToString(),
                     Type = ((LogTypeEnum)context.Logs.ToList().Where(x => x.ProductId == product.Id).FirstOrDefault().Type).ToString(),
@@ -145,12 +145,12 @@ namespace ProductStock.DAL
                 }).Where(p => 
                         p.Name.Contains(name) &&
                         p.Price.Contains(price) &&
-                        p.Category.Contains(categoryName)|| p.Category==null &&
+                        p.Category.Contains(categoryName) &&
                         p.Count.Contains(count) &&
                         p.Sold.Contains(sold) &&
                         p.Description.Contains(description) &&
-                        p.Status.Contains(status) || p.Status == null &&
-                        p.Type.Contains(type) || p.Type == null).ToList();
+                        (p.Status.Contains(status) || p.Status == null) &&
+                        (p.Type.Contains(type) || p.Type == null)).ToList();
                 dgv.DataSource = products;
 
             }
@@ -187,8 +187,8 @@ namespace ProductStock.DAL
                         p.Category.Contains(categoryName) &&
                         p.Count.Contains(count) &&
                         p.Sold.Contains(sold) &&
-                        p.Description.Contains(description) || p.Description==null &&
-                        p.Status.Contains(status) || p.Status==null &&
+                        (p.Description.Contains(description) || p.Description==null) &&
+                        (p.Status.Contains(status) || p.Status==null) &&
                         p.Type.Contains(type)).Where(p => p.UserEmail == email).ToList();
                 dgv.DataSource = products;
 
